@@ -25,6 +25,7 @@ func readerMember(reader *ClassReader, cp ConstantPool) *MemberInfo {
 		descriptorIndex:reader.readUint16(),
 		attributes:readerAttributes(reader,cp),
 
+		
 	}
 }
 
