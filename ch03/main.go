@@ -26,6 +26,7 @@ func startJVM(cmd *Cmd) {
 		fmt.Printf("conld not find or load main class %s\n", cmd.class)
 		return
 	}
+
 	fmt.Printf("class data: %v\n", classData)
 }
 
