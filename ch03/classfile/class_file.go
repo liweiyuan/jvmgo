@@ -60,7 +60,7 @@ func (self *ClassFile) readAndCheckVersion(reader *ClassReader) {
 	switch self.majorVersion {
 	case 45:
 		return
-	case 46,47,48,49.50,51,52:
+	case 46,47,48,49,50,51,52:
 		if self.minorVersion==0{
 			return
 		}
@@ -83,7 +83,7 @@ func (self *ClassFile) ConstantPool() ConstantPool{
 }
 
 //getter() accessFlags
-func (self *ClassFile) AccseeFlags() uint16{
+func (self *ClassFile) AccessFlags() uint16{
 	return self.accessFlags
 }
 //getter() fields
