@@ -50,14 +50,23 @@ readAttribute（）先读取属性名索引，根据它从常量池中找到属
 //Java虚拟机规范预定义了23种属性，先解析其中的8种。
 func newAttributeInfo(attrName string, attrLen uint32, cp ConstantPool) AttributeInfo {
 	switch attrName {
-	case "Code": return &CodeAttribute{cp: cp}
-	case "ConstantValue": return &ConstantValueAttribute{}
-	case "Deprecated": return &DeprecatedAttribute{}
-	case "Exceptions": return &ExceptionsAttribute{}
-	case "LineNumberTable": return &LineNumberTableAttribute{}
-	case "LocalVariableTable": return &LocalVariableTableAttribute{}
-	case "SourceFile": return &SourceFileAttribute{cp: cp}
-	case "Synthetic": return &SyntheticAttribute{}
-	default: return &UnparsedAttribute{attrName, attrLen, nil}
+	case "Code":
+		return &CodeAttribute{cp: cp}
+	case "ConstantValue":
+		return &ConstantValueAttribute{}
+	case "Deprecated":
+		return &DeprecatedAttribute{}
+	case "Exceptions":
+		return &ExceptionsAttribute{}
+	case "LineNumberTable":
+		return &LineNumberTableAttribute{}
+	case "LocalVariableTable":
+		return &LocalVariableTableAttribute{}
+	case "SourceFile":
+		return &SourceFileAttribute{cp: cp}
+	case "Synthetic":
+		return &SyntheticAttribute{}
+	default:
+		return &UnparsedAttribute{attrName, attrLen, nil}
 	}
 }

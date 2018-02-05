@@ -28,6 +28,7 @@ type SyntheticAttribute struct {
 
 type MarkerAttribute struct {
 }
+
 func (self *MarkerAttribute) readInfo(reader *ClassReader) {
 	// read nothing
 }

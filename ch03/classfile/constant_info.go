@@ -22,7 +22,8 @@ const (
 //定义ConstantInfo接口，表示常量信息
 type ConstantInfo interface {
 	//readInfo（）方法读取常量信息，需要由具体的常量结构体实现。
-	readerInfo(reader *ClassReader)
+	readInfo(reader *ClassReader)
+
 }
 
 /**
@@ -32,7 +33,7 @@ readConstantInfo（）函数先读出tag值，然后调用newConstantInfo（）�
 func readConstantInfo(reader *ClassReader, cp ConstantPool) ConstantInfo {
 	tag := reader.readUint8()
 	c := newConstantInfo(tag, cp)
-	c.readerInfo(reader)
+	c.readInfo(reader)
 	return c
 }
 

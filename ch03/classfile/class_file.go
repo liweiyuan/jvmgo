@@ -87,7 +87,7 @@ func (self *ClassFile) AccseeFlags() uint16{
 	return self.accessFlags
 }
 //getter() fields
-func (self *ClassFile) Fields() []*memberInfo{
+func (self *ClassFile) Fields() []*MemberInfo{
 	return self.fields
 }
 
@@ -109,7 +109,7 @@ func (self *ClassFile) SuperClassName() string{
 
 func (self *ClassFile) InterfaceNames() []string{
 	interfaceNames:=make([]string,len(self.interfaces))
-	for i,cpIndex:=range interfaceNames{
+	for i,cpIndex:=range self.interfaces{
 		interfaceNames[i]=self.constantPool.getClassName(cpIndex)
 	}
 	return interfaceNames
