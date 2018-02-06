@@ -16,5 +16,5 @@ func main() {
 	}
 }
 func startJVM(cmd *Cmd) {
-	frame:=rtda.NewThread(100,100)
+	frame := rtda.NewFrame(100, 100)
 }
