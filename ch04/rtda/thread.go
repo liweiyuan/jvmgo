@@ -23,14 +23,15 @@ func (self *Thread) SetPc(pc int) {
 	self.pc = pc
 }
 
+//PushFrame（）和PopFrame（）方法只是调用Stack结构体的相应方法而已
 func (self *Thread) PushFrame(frame *Frame) {
-
+	self.stack.push(frame)
 }
 
 func (self *Thread) PopFrame() *Frame {
-
+	self.stack.pop()
 }
-
+//CurrentFrame（）方法返回当前帧
 func (self *Thread) CurrentFrame() *Frame {
-
+	return self.stack.top()
 }
