@@ -7,10 +7,14 @@ type Thread struct {
 }
 
 //newStack（）函数创建Stack结构体实例，它的参数表示要创建的Stack最多可以容纳多少帧，4.3.2节将给出这个函数的代码
-func NewThread() *Thread {
+func NewThread(maxLocals, maxStack uint) *Thread {
 	return &Thread{
 		stack: newStack(1024),
 	}
+	/*return &Frame{
+		localVars:    newLocalVars(maxLocals),
+		operandStack: newOperandStack(maxStack),
+	}*/
 }
 
 //getter
