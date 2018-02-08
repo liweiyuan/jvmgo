@@ -13,6 +13,7 @@ type Instruction interface {
 	Execute(frame *rtda.Frame)
 }
 
+
 //NoOperandsInstruction表示没有操作数的指令，所以没有定义任何字段
 type NoOperandsInstruction struct {
 
