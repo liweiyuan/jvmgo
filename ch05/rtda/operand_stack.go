@@ -79,3 +79,15 @@ func (self *OperandStack) PopRef() *Object {
 	self.slots[self.size].ref = nil
 	return ref
 }
+
+//栈指令直接对操作数栈进行操作---添加的方法(栈指令)
+//和其他类型的指令不同，栈指令并不关心变量类型。
+func (self *OperandStack) PushSlot(slot Slot) {
+	self.slots[self.size] = slot
+	self.size++
+}
+
+func (self *OperandStack) PopSlot() Slot {
+	self.size--
+	return self.slots[self.size]
+}
