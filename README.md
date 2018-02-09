@@ -12,3 +12,4 @@ this is a sample jvm
    math:数学指令
    stack:操作数栈指令
    stores:存储指令
+   年前--比较指令
